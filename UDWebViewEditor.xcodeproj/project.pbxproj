@@ -1652,7 +1652,7 @@
 				DEVELOPMENT_TEAM = 7FTVB8K8K4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/mac_work_zhao/Desktop/Demos/UDWebViewEditor/UDWebViewEditor/config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UDWebViewEditor/config/PrefixHeader.pch";
 				INFOPLIST_FILE = "./UDWebViewEditor//config/UDWebViewEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1677,7 +1677,7 @@
 				DEVELOPMENT_TEAM = 7FTVB8K8K4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = /Users/mac_work_zhao/Desktop/Demos/UDWebViewEditor/UDWebViewEditor/config/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/UDWebViewEditor/config/PrefixHeader.pch";
 				INFOPLIST_FILE = "./UDWebViewEditor//config/UDWebViewEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

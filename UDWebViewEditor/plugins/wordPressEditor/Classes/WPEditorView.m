@@ -611,7 +611,7 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                  [self callDelegateEditorTextDidChange];
              }
              
-             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
+//             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
          } else if ([parameterName isEqualToString:kYOffsetParameterName]) {
              
 //             self.caretYOffset = @([parameterValue floatValue]);
