@@ -223,6 +223,8 @@
 		35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F302142BEE50032AF71 /* UDArticleModel.m */; };
 		35266F352142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */; };
 		35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F392142D1160032AF71 /* UDKeyboardInputView.m */; };
+		35266F3D2142D7200032AF71 /* UIView+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F3C2142D7200032AF71 /* UIView+UDExtension.m */; };
+		352A58CC2142E5E9009B7E26 /* UDKeyboardInputViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -568,6 +570,10 @@
 		35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UDNavActivityItem.m"; sourceTree = "<group>"; };
 		35266F382142D1160032AF71 /* UDKeyboardInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputView.h; sourceTree = "<group>"; };
 		35266F392142D1160032AF71 /* UDKeyboardInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputView.m; sourceTree = "<group>"; };
+		35266F3B2142D7200032AF71 /* UIView+UDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UDExtension.h"; sourceTree = "<group>"; };
+		35266F3C2142D7200032AF71 /* UIView+UDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UDExtension.m"; sourceTree = "<group>"; };
+		352A58CA2142E5E9009B7E26 /* UDKeyboardInputViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputViewItem.h; sourceTree = "<group>"; };
+		352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputViewItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1167,6 +1173,8 @@
 		35266F322142C1190032AF71 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				35266F3B2142D7200032AF71 /* UIView+UDExtension.h */,
+				35266F3C2142D7200032AF71 /* UIView+UDExtension.m */,
 				35266F332142C4AD0032AF71 /* UIViewController+UDNavActivityItem.h */,
 				35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */,
 			);
@@ -1186,6 +1194,8 @@
 			children = (
 				35266F382142D1160032AF71 /* UDKeyboardInputView.h */,
 				35266F392142D1160032AF71 /* UDKeyboardInputView.m */,
+				352A58CA2142E5E9009B7E26 /* UDKeyboardInputViewItem.h */,
+				352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */,
 			);
 			path = keyboardInputView;
 			sourceTree = "<group>";
@@ -1438,6 +1448,7 @@
 				221D6C9F21368CE7005DB19F /* YYDiskCache.m in Sources */,
 				35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */,
 				225730DF212E6A13009DD627 /* QNUploadManager.m in Sources */,
+				352A58CC2142E5E9009B7E26 /* UDKeyboardInputViewItem.m in Sources */,
 				2257310E212E6A59009DD627 /* QNFile.m in Sources */,
 				22573126212E6B29009DD627 /* QNDes.m in Sources */,
 				225730A2212BF14B009DD627 /* WPEditorViewController.m in Sources */,
@@ -1463,6 +1474,7 @@
 				22573107212E6A59009DD627 /* QNUrlSafeBase64.m in Sources */,
 				22572F66212BEC81009DD627 /* TZImageManager.m in Sources */,
 				2257314B212E6B56009DD627 /* QNRecord.m in Sources */,
+				35266F3D2142D7200032AF71 /* UIView+UDExtension.m in Sources */,
 				221D6C9E21368CE7005DB19F /* YYKVStorage.m in Sources */,
 				22572EF1212BE9B5009DD627 /* main.m in Sources */,
 				2257310D212E6A59009DD627 /* QNALAssetFile.m in Sources */,
@@ -1704,6 +1716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FTVB8K8K4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1729,6 +1742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7FTVB8K8K4;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
