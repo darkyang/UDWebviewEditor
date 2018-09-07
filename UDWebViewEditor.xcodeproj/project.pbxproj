@@ -219,6 +219,10 @@
 		22573150212E6B62009DD627 /* QNAssessment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2257314D212E6B61009DD627 /* QNAssessment.m */; };
 		22573151212E6B62009DD627 /* QNIpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2257314F212E6B61009DD627 /* QNIpModel.m */; };
 		22573153212E6C49009DD627 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22573152212E6C49009DD627 /* libresolv.9.tbd */; };
+		35266F2D2142BE2E0032AF71 /* UDEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F2C2142BE2E0032AF71 /* UDEditorViewController.m */; };
+		35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F302142BEE50032AF71 /* UDArticleModel.m */; };
+		35266F352142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */; };
+		35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F392142D1160032AF71 /* UDKeyboardInputView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -556,6 +560,14 @@
 		2257314E212E6B61009DD627 /* QNIpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QNIpModel.h; path = HappyDNS/Assessment/QNIpModel.h; sourceTree = "<group>"; };
 		2257314F212E6B61009DD627 /* QNIpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QNIpModel.m; path = HappyDNS/Assessment/QNIpModel.m; sourceTree = "<group>"; };
 		22573152212E6C49009DD627 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		35266F2B2142BE2E0032AF71 /* UDEditorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDEditorViewController.h; sourceTree = "<group>"; };
+		35266F2C2142BE2E0032AF71 /* UDEditorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDEditorViewController.m; sourceTree = "<group>"; };
+		35266F2F2142BEE50032AF71 /* UDArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UDArticleModel.h; path = UDWebViewEditor/models/UDArticleModel.h; sourceTree = SOURCE_ROOT; };
+		35266F302142BEE50032AF71 /* UDArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UDArticleModel.m; path = UDWebViewEditor/models/UDArticleModel.m; sourceTree = SOURCE_ROOT; };
+		35266F332142C4AD0032AF71 /* UIViewController+UDNavActivityItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UDNavActivityItem.h"; sourceTree = "<group>"; };
+		35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UDNavActivityItem.m"; sourceTree = "<group>"; };
+		35266F382142D1160032AF71 /* UDKeyboardInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputView.h; sourceTree = "<group>"; };
+		35266F392142D1160032AF71 /* UDKeyboardInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -630,7 +642,10 @@
 		22572EE0212BE9B2009DD627 /* UDWebViewEditor */ = {
 			isa = PBXGroup;
 			children = (
-				225730BE212E63B3009DD627 /* model */,
+				35266F362142CFCC0032AF71 /* view */,
+				35266F322142C1190032AF71 /* categories */,
+				35266F2E2142BE340032AF71 /* viewcontrollers */,
+				225730BE212E63B3009DD627 /* models */,
 				22572F37212BEC15009DD627 /* plugins */,
 				22572F33212BEB9F009DD627 /* resources */,
 				22572F2A212BEAE9009DD627 /* storyboard */,
@@ -948,11 +963,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		225730BE212E63B3009DD627 /* model */ = {
+		225730BE212E63B3009DD627 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				35266F2F2142BEE50032AF71 /* UDArticleModel.h */,
+				35266F302142BEE50032AF71 /* UDArticleModel.m */,
 			);
-			path = model;
+			path = models;
 			sourceTree = "<group>";
 		};
 		225730C5212E6934009DD627 /* QiniuSDK */ = {
@@ -1136,6 +1153,41 @@
 				2257311C212E6B29009DD627 /* QNIP.m */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		35266F2E2142BE340032AF71 /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				35266F2B2142BE2E0032AF71 /* UDEditorViewController.h */,
+				35266F2C2142BE2E0032AF71 /* UDEditorViewController.m */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		35266F322142C1190032AF71 /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				35266F332142C4AD0032AF71 /* UIViewController+UDNavActivityItem.h */,
+				35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */,
+			);
+			path = categories;
+			sourceTree = "<group>";
+		};
+		35266F362142CFCC0032AF71 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				35266F372142CFE60032AF71 /* keyboardInputView */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		35266F372142CFE60032AF71 /* keyboardInputView */ = {
+			isa = PBXGroup;
+			children = (
+				35266F382142D1160032AF71 /* UDKeyboardInputView.h */,
+				35266F392142D1160032AF71 /* UDKeyboardInputView.m */,
+			);
+			path = keyboardInputView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1384,6 +1436,7 @@
 			files = (
 				2257310B212E6A59009DD627 /* QNPHAssetFile.m in Sources */,
 				221D6C9F21368CE7005DB19F /* YYDiskCache.m in Sources */,
+				35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */,
 				225730DF212E6A13009DD627 /* QNUploadManager.m in Sources */,
 				2257310E212E6A59009DD627 /* QNFile.m in Sources */,
 				22573126212E6B29009DD627 /* QNDes.m in Sources */,
@@ -1396,6 +1449,7 @@
 				2257313A212E6B48009DD627 /* QNDnspodFree.m in Sources */,
 				2257309B212BF14B009DD627 /* WPImageMeta.m in Sources */,
 				22572F5D212BEC81009DD627 /* TZGifPhotoPreviewController.m in Sources */,
+				35266F352142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m in Sources */,
 				22572F59212BEC81009DD627 /* TZAssetModel.m in Sources */,
 				22573147212E6B56009DD627 /* QNDomain.m in Sources */,
 				22573099212BF14B009DD627 /* HRCgUtil.m in Sources */,
@@ -1438,6 +1492,7 @@
 				22572F61212BEC81009DD627 /* UIView+Layout.m in Sources */,
 				225730ED212E6A3A009DD627 /* QNResponseInfo.m in Sources */,
 				22572F5E212BEC81009DD627 /* TZLocationManager.m in Sources */,
+				35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */,
 				225730AB212BF14B009DD627 /* HRColorUtil.m in Sources */,
 				225730AA212BF14B009DD627 /* WPLegacyEditorFormatToolbar.m in Sources */,
 				22573098212BF14B009DD627 /* HRColorPickerView.m in Sources */,
@@ -1456,6 +1511,7 @@
 				2257309A212BF14B009DD627 /* CYRTextStorage.m in Sources */,
 				225730E0212E6A13009DD627 /* QNConfiguration.m in Sources */,
 				225730A0212BF14B009DD627 /* UIWebView+GUIFixes.m in Sources */,
+				35266F2D2142BE2E0032AF71 /* UDEditorViewController.m in Sources */,
 				22573134212E6B34009DD627 /* QNResolver.m in Sources */,
 				2257313B212E6B48009DD627 /* QNDnspodEnterprise.m in Sources */,
 				2257314A212E6B56009DD627 /* QNNetworkInfo.m in Sources */,

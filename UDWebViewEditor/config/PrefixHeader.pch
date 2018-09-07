@@ -9,7 +9,19 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+/*Function Define*/
+#ifndef UDLazyLoading
+#define UDLazyLoading(_type_, _ivar_) \
+    - (_type_ *)_ivar_ { \
+        if (! _##_ivar_) { \
+            _##_ivar_ = [[_type_ alloc] init]; \
+        } \
+        return _##_ivar_; \
+    }
+#endif
+
+
+/*Categories*/
+#import "UIViewController+UDNavActivityItem.h"
 
 #endif /* PrefixHeader_pch */
