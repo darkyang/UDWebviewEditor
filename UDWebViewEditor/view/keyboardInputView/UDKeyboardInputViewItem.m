@@ -36,7 +36,7 @@
     self.userInteractionEnabled = YES;
     [self addGestureRecognizer:tap];
 }
-         
+
 - (void)tap:(UIGestureRecognizer*)geseture{
     if (self.tapHandler) {
         self.tapHandler(self);

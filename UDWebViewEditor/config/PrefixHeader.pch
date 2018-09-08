@@ -40,9 +40,14 @@
     }
 #endif
 
+/*const variables*/
+#define NullString @""
+
 
 /*Extension*/
 #import "UIView+UDExtension.h"
+#import "NSString+UDExtension.h"
+#import "UIViewController+UDExtension.h"
 
 /*Categories*/
 #import "UIViewController+UDNavActivityItem.h"

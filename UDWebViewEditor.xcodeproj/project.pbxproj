@@ -16,7 +16,6 @@
 		221D6CA521368D26005DB19F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 221D6CA421368D26005DB19F /* libsqlite3.0.tbd */; };
 		221D6CA721368D32005DB19F /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 221D6CA621368D32005DB19F /* libsqlite3.tbd */; };
 		22572EF1212BE9B5009DD627 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22572EF0212BE9B5009DD627 /* main.m */; };
-		22572EFB212BE9B5009DD627 /* UDWebViewEditorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22572EFA212BE9B5009DD627 /* UDWebViewEditorTests.m */; };
 		22572F06212BE9B5009DD627 /* UDWebViewEditorUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22572F05212BE9B5009DD627 /* UDWebViewEditorUITests.m */; };
 		22572F21212BEA42009DD627 /* UDWebViewEditor-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22572F14212BEA41009DD627 /* UDWebViewEditor-Info.plist */; };
 		22572F22212BEA42009DD627 /* WPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22572F16212BEA41009DD627 /* WPViewController.m */; };
@@ -225,6 +224,8 @@
 		35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F392142D1160032AF71 /* UDKeyboardInputView.m */; };
 		35266F3D2142D7200032AF71 /* UIView+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F3C2142D7200032AF71 /* UIView+UDExtension.m */; };
 		352A58CC2142E5E9009B7E26 /* UDKeyboardInputViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */; };
+		35DA236D2143BB4F00F97282 /* NSString+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA236C2143BB4F00F97282 /* NSString+UDExtension.m */; };
+		35DA23702143C67B00F97282 /* UIViewController+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA236F2143C67B00F97282 /* UIViewController+UDExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,8 +262,6 @@
 		22572EDE212BE9B2009DD627 /* UDWebViewEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDWebViewEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22572EF0212BE9B5009DD627 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22572EF6212BE9B5009DD627 /* UDWebViewEditorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDWebViewEditorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		22572EFA212BE9B5009DD627 /* UDWebViewEditorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDWebViewEditorTests.m; sourceTree = "<group>"; };
-		22572EFC212BE9B5009DD627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22572F01212BE9B5009DD627 /* UDWebViewEditorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UDWebViewEditorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22572F05212BE9B5009DD627 /* UDWebViewEditorUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDWebViewEditorUITests.m; sourceTree = "<group>"; };
 		22572F07212BE9B5009DD627 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -574,6 +573,10 @@
 		35266F3C2142D7200032AF71 /* UIView+UDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UDExtension.m"; sourceTree = "<group>"; };
 		352A58CA2142E5E9009B7E26 /* UDKeyboardInputViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputViewItem.h; sourceTree = "<group>"; };
 		352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputViewItem.m; sourceTree = "<group>"; };
+		35DA236B2143BB4F00F97282 /* NSString+UDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+UDExtension.h"; sourceTree = "<group>"; };
+		35DA236C2143BB4F00F97282 /* NSString+UDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+UDExtension.m"; sourceTree = "<group>"; };
+		35DA236E2143C67B00F97282 /* UIViewController+UDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UDExtension.h"; sourceTree = "<group>"; };
+		35DA236F2143C67B00F97282 /* UIViewController+UDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UDExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -628,7 +631,6 @@
 			children = (
 				221D6CA82136931D005DB19F /* PrefixHeader.pch */,
 				22572EE0212BE9B2009DD627 /* UDWebViewEditor */,
-				22572EF9212BE9B5009DD627 /* UDWebViewEditorTests */,
 				22572F04212BE9B5009DD627 /* UDWebViewEditorUITests */,
 				22572EDF212BE9B2009DD627 /* Products */,
 				225730AF212BF43E009DD627 /* Frameworks */,
@@ -666,15 +668,6 @@
 				22572F16212BEA41009DD627 /* WPViewController.m */,
 			);
 			path = UDWebViewEditor;
-			sourceTree = "<group>";
-		};
-		22572EF9212BE9B5009DD627 /* UDWebViewEditorTests */ = {
-			isa = PBXGroup;
-			children = (
-				22572EFA212BE9B5009DD627 /* UDWebViewEditorTests.m */,
-				22572EFC212BE9B5009DD627 /* Info.plist */,
-			);
-			path = UDWebViewEditorTests;
 			sourceTree = "<group>";
 		};
 		22572F04212BE9B5009DD627 /* UDWebViewEditorUITests */ = {
@@ -1173,8 +1166,12 @@
 		35266F322142C1190032AF71 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				35DA236E2143C67B00F97282 /* UIViewController+UDExtension.h */,
+				35DA236F2143C67B00F97282 /* UIViewController+UDExtension.m */,
 				35266F3B2142D7200032AF71 /* UIView+UDExtension.h */,
 				35266F3C2142D7200032AF71 /* UIView+UDExtension.m */,
+				35DA236B2143BB4F00F97282 /* NSString+UDExtension.h */,
+				35DA236C2143BB4F00F97282 /* NSString+UDExtension.m */,
 				35266F332142C4AD0032AF71 /* UIViewController+UDNavActivityItem.h */,
 				35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */,
 			);
@@ -1446,6 +1443,7 @@
 			files = (
 				2257310B212E6A59009DD627 /* QNPHAssetFile.m in Sources */,
 				221D6C9F21368CE7005DB19F /* YYDiskCache.m in Sources */,
+				35DA236D2143BB4F00F97282 /* NSString+UDExtension.m in Sources */,
 				35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */,
 				225730DF212E6A13009DD627 /* QNUploadManager.m in Sources */,
 				352A58CC2142E5E9009B7E26 /* UDKeyboardInputViewItem.m in Sources */,
@@ -1523,6 +1521,7 @@
 				2257309A212BF14B009DD627 /* CYRTextStorage.m in Sources */,
 				225730E0212E6A13009DD627 /* QNConfiguration.m in Sources */,
 				225730A0212BF14B009DD627 /* UIWebView+GUIFixes.m in Sources */,
+				35DA23702143C67B00F97282 /* UIViewController+UDExtension.m in Sources */,
 				35266F2D2142BE2E0032AF71 /* UDEditorViewController.m in Sources */,
 				22573134212E6B34009DD627 /* QNResolver.m in Sources */,
 				2257313B212E6B48009DD627 /* QNDnspodEnterprise.m in Sources */,
@@ -1544,7 +1543,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22572EFB212BE9B5009DD627 /* UDWebViewEditorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
