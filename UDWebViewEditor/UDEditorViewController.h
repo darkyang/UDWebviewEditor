@@ -8,7 +8,7 @@
 
 #import "WPEditorViewController.h"
 
-@interface UDEditorViewController : WPEditorViewController
+@interface UDEditorViewController : WPEditorViewController <WPEditorViewControllerDelegate>
 
 
 

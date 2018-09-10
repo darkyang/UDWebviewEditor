@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UDKeyboardInputViewItem.h"
+
 typedef NS_OPTIONS(NSInteger, UDKeyboardInputViewStyle){
     UDKeyboardInputViewStyleDefault = 1 << 0,
     UDKeyboardInputViewStyleIndicatorLabel = 1 << 1,
@@ -20,8 +22,8 @@ typedef NS_OPTIONS(NSInteger, UDKeyboardInputViewStyle){
 - (instancetype)initWithFrame:(CGRect)frame
                     itemWidth:(CGFloat)width
                         style:(UDKeyboardInputViewStyle)style
-                        icons:(NSArray*)icons
+                        icons:(NSArray<NSString*>*)icons
                indicatorTitle:(NSString*)title
-                     Handlers:(NSArray*)handlers;
+                     Handlers:(NSArray<toolbarItemTapHandler>*)handlers;
 
 @end

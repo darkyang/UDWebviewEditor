@@ -7,7 +7,6 @@
 //
 
 #import "UDKeyboardInputView.h"
-#import "UDKeyboardInputViewItem.h"
 
 #define leftMargin 6.f
 #define margin 10.f
@@ -32,9 +31,9 @@
 - (instancetype)initWithFrame:(CGRect)frame
                     itemWidth:(CGFloat)width
                         style:(UDKeyboardInputViewStyle)style
-                        icons:(NSArray*)icons
+                        icons:(NSArray<NSString*>*)icons
                indicatorTitle:(NSString*)title
-                     Handlers:(NSArray*)handlers{
+                     Handlers:(NSArray<toolbarItemTapHandler>*)handlers{
     self = [super initWithFrame:frame];
     
     _itemWidth = width;

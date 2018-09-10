@@ -131,4 +131,18 @@
 //    _keyboardInputType = 0;
 }
 
+#pragma mark -- WPEditorViewControllerDelegate
+- (void)editorDidFinishLoadingDOM:(WPEditorViewController *)editorController{
+    
+}
+
+- (void)editorTitleDidChange:(WPEditorViewController *)editorController{
+    
+}
+
+- (void)editorTextDidChange:(WPEditorViewController *)editorController{
+    
+}
+
+
 @end

@@ -10,12 +10,12 @@
 #import "ZSSBarButtonItem.h"
 
 @interface WrapperViewForInputView: UIView
-    @property (nonatomic, strong) BKEditorFormatbarView *toolbar;
+    @property (nonatomic, strong) UDKeyboardInputView *toolbar;
 @end
 
 @implementation WrapperViewForInputView
 
-- (instancetype)initWithToolbar:(BKEditorFormatbarView *)toolbar {
+- (instancetype)initWithToolbar:(UDKeyboardInputView *)toolbar {
     self = [super initWithFrame:CGRectMake(0, 0, self.frame.size.width, WPEditorFormatbarViewToolbarHeight)];
     if (self) {
         _toolbar = toolbar;
@@ -69,7 +69,7 @@
 
 #pragma mark - Properties: Toolbar
 
-@property (nonatomic, strong, readwrite) BKEditorFormatbarView* toolbarView;
+@property (nonatomic, strong, readwrite) UDKeyboardInputView* toolbarView;
 
 @property (nonatomic, strong, readwrite) WrapperViewForInputView* wrapperViewForInputView;
 
@@ -136,8 +136,40 @@
 //    NSBundle *editorBundle = [NSBundle bundleForClass:[WPEditorFormatbarView class]];
 //    _toolbarView = (WPEditorFormatbarView *)[[editorBundle loadNibNamed:NSStringFromClass([WPEditorFormatbarView class]) owner:nil options:nil] firstObject];
     
-    _toolbarView = [[BKEditorFormatbarView alloc] initWithFrame:CGRectMake(0, 0, 375, 88)];
-    _toolbarView.delegate = self;
+    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
+    
+    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
+    
+    _toolbarView = [[UDKeyboardInputView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)
+                                                    itemWidth:50.f
+                                                        style:UDKeyboardInputViewStyleDoneButton
+                                                        icons:icons
+                                               indicatorTitle:nil
+                                                     Handlers:handlers];
 }
 
 #pragma mark - UIViewController
@@ -288,7 +320,7 @@
 - (void)clearToolbar
 {
     if (!self.editorView.isInVisualMode) {
-        [self.toolbarView clearSelectedToolbarItems];
+//        [self.toolbarView clearSelectedToolbarItems];
     }
 }
 
@@ -1170,7 +1202,7 @@
 - (void)editorView:(WPEditorView*)editorView stylesForCurrentSelection:(NSArray*)styles
 {
     self.editorItemsEnabled = styles;
-	[self.toolbarView selectToolbarItemsForStyles:styles];
+//    [self.toolbarView selectToolbarItemsForStyles:styles];
 }
 
 - (void)editorView:(WPEditorView *)editorView imagePasted:(UIImage *)image
@@ -1229,13 +1261,13 @@ didFailLoadWithError:(NSError *)error
     }
 }
 
-- (UIColor *)barButtonItemDefaultColor
-{
-    if (self.toolbarView.itemTintColor) {
-        return self.toolbarView.itemTintColor;
-    }
-    return [UIColor grayColor];
-}
+//- (UIColor *)barButtonItemDefaultColor
+//{
+//    if (self.toolbarView.itemTintColor) {
+//        return self.toolbarView.itemTintColor;
+//    }
+//    return [UIColor grayColor];
+//}
 
 - (UIColor *)barButtonItemSelectedDefaultColor
 {

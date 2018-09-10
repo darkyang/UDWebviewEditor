@@ -59,10 +59,10 @@
 - (void)customizeAppearance
 {
     [super customizeAppearance];
-    [self.toolbarView setBorderColor:[UIColor lightGrayColor]];
-    [self.toolbarView setItemTintColor: [UIColor lightGrayColor]];
-    [self.toolbarView setItemSelectedTintColor:[UIColor darkGrayColor]];
-    [self.toolbarView setItemUnableTintColor:[UIColor colorWithRed:0.78 green:0.84 blue:0.88 alpha:0.5]];
+//    [self.toolbarView setBorderColor:[UIColor lightGrayColor]];
+//    [self.toolbarView setItemTintColor: [UIColor lightGrayColor]];
+//    [self.toolbarView setItemSelectedTintColor:[UIColor darkGrayColor]];
+//    [self.toolbarView setItemUnableTintColor:[UIColor colorWithRed:0.78 green:0.84 blue:0.88 alpha:0.5]];
     // Explicit design decision to use non-standard colors. See:
     // https://github.com/wordpress-mobile/WordPress-Editor-iOS/issues/657#issuecomment-113651034
     [self.toolbarView setBackgroundColor: [UIColor colorWithRed:0xF9/255.0 green:0xFB/255.0 blue:0xFC/255.0 alpha:1]];

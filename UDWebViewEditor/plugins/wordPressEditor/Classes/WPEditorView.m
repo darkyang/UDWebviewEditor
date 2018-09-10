@@ -9,6 +9,7 @@
 #import "WPEditorView.h"
 
 #import "UIWebView+GUIFixes.h"
+#import "UDKeyboardInputView.h"
 #import "HRColorUtil.h"
 #import "WPEditorField.h"
 #import "WPImageMeta.h"
@@ -62,6 +63,8 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
 #pragma mark - Fields
 @property (nonatomic, weak, readwrite) WPEditorField* focusedField;
 
+@property (nonatomic, strong) UDKeyboardInputView *customInputView;
+
 @end
 
 @implementation WPEditorView
@@ -95,6 +98,7 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
                                             CGRectGetHeight(childFrame)-CGRectGetHeight(self.sourceViewTitleField.frame)-CGRectGetHeight(self.sourceContentDividerView.frame));
 
         [self createSourceViewWithFrame:sourceViewFrame];
+        [self createCustomInputView];
         [self createWebViewWithFrame:childFrame];
         [self setupHTMLEditor];
 	}
@@ -191,6 +195,43 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
     [self addSubview:_sourceView];
 }
 
+- (void)createCustomInputView{
+    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
+    
+    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
+    
+    _customInputView = [[UDKeyboardInputView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)
+                                                        itemWidth:50.f
+                                                            style:UDKeyboardInputViewStyleDoneButton
+                                                            icons:icons
+                                                   indicatorTitle:nil
+                                                         Handlers:handlers];
+}
+
 - (void)createWebViewWithFrame:(CGRect)frame
 {
 	NSAssert(!_webView, @"The web view must not exist when this method is called!");
@@ -203,12 +244,13 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
     _webView.backgroundColor = [UIColor clearColor];
     _webView.opaque = NO;
     _webView.scrollView.bounces = NO;
+//    _webView.customInputAccessoryView = self.customInputView;
     _webView.usesGUIFixes = YES;
     _webView.keyboardDisplayRequiresUserAction = NO;
     _webView.scrollView.bounces = YES;
     _webView.allowsInlineMediaPlayback = YES;
     [self startObservingWebViewContentSizeChanges];
-    
+
 	[self addSubview:_webView];
 }
 
@@ -555,21 +597,21 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     
     static NSString* const kFieldIdParameterName = @"id";
     
-//    [self parseParametersFromCallbackURL:url
-//         andExecuteBlockForEachParameter:^(NSString *parameterName, NSString *parameterValue)
-//     {
-//         if ([parameterName isEqualToString:kFieldIdParameterName]) {
-//             if ([parameterValue isEqualToString:kWPEditorViewFieldTitleId]) {
-//                 self.focusedField = self.titleField;
-//             } else if ([parameterValue isEqualToString:kWPEditorViewFieldContentId]) {
-//                 self.focusedField = self.contentField;
-//             }
-//
-//             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
-//         }
-//     } onComplete:^{
-//         [self callDelegateFieldFocused:self.focusedField];
-//     }];
+    [self parseParametersFromCallbackURL:url
+         andExecuteBlockForEachParameter:^(NSString *parameterName, NSString *parameterValue)
+     {
+         if ([parameterName isEqualToString:kFieldIdParameterName]) {
+             if ([parameterValue isEqualToString:kWPEditorViewFieldTitleId]) {
+                 self.focusedField = self.titleField;
+             } else if ([parameterValue isEqualToString:kWPEditorViewFieldContentId]) {
+                 self.focusedField = self.contentField;
+             }
+
+             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
+         }
+     } onComplete:^{
+         [self callDelegateFieldFocused:self.focusedField];
+     }];
 }
 
 /**
@@ -611,13 +653,13 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
                  [self callDelegateEditorTextDidChange];
              }
              
-//             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
+             self.webView.customInputAccessoryView = self.focusedField.inputAccessoryView;
          } else if ([parameterName isEqualToString:kYOffsetParameterName]) {
              
-//             self.caretYOffset = @([parameterValue floatValue]);
+             self.caretYOffset = @([parameterValue floatValue]);
          } else if ([parameterName isEqualToString:kLineHeightParameterName]) {
              
-//             self.lineHeight = @([parameterValue floatValue]);
+             self.lineHeight = @([parameterValue floatValue]);
          }
      } onComplete:^() {
          
@@ -628,8 +670,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
          // field while also showing the virtual keyboard.  You'll notice the caret can, at times,
          // go behind the virtual keyboard.
          //
-//         [self refreshVisibleViewportAndContentSize];
-//         [self scrollToCaretAnimated:NO];
+         [self refreshVisibleViewportAndContentSize];
+         [self scrollToCaretAnimated:NO];
      }];
 }
 
