@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 #import "HRColorPickerViewController.h"
 #import "WPEditorFormatbarView.h"
-#import "UDKeyboardInputView.h"
+#import "UDKeyboardInputAccessoryView.h"
 #import "WPEditorStat.h"
 
 @class WPEditorField;
@@ -150,7 +150,7 @@ WPEditorViewControllerMode;
 
 #pragma mark - Properties: Toolbar
 
-@property (nonatomic, strong, readonly) UDKeyboardInputView* toolbarView;
+@property (nonatomic, strong, readonly) UDKeyboardInputAccessoryView* toolbarView;
 
 #pragma mark - Initializers
 /**

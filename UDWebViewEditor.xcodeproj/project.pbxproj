@@ -221,7 +221,7 @@
 		35266F2D2142BE2E0032AF71 /* UDEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F2C2142BE2E0032AF71 /* UDEditorViewController.m */; };
 		35266F312142BEE50032AF71 /* UDArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F302142BEE50032AF71 /* UDArticleModel.m */; };
 		35266F352142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */; };
-		35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F392142D1160032AF71 /* UDKeyboardInputView.m */; };
+		35266F3A2142D1160032AF71 /* UDKeyboardInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F392142D1160032AF71 /* UDKeyboardInputAccessoryView.m */; };
 		35266F3D2142D7200032AF71 /* UIView+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35266F3C2142D7200032AF71 /* UIView+UDExtension.m */; };
 		352A58CC2142E5E9009B7E26 /* UDKeyboardInputViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */; };
 		35DA236D2143BB4F00F97282 /* NSString+UDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DA236C2143BB4F00F97282 /* NSString+UDExtension.m */; };
@@ -567,8 +567,8 @@
 		35266F302142BEE50032AF71 /* UDArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UDArticleModel.m; path = UDWebViewEditor/models/UDArticleModel.m; sourceTree = SOURCE_ROOT; };
 		35266F332142C4AD0032AF71 /* UIViewController+UDNavActivityItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UDNavActivityItem.h"; sourceTree = "<group>"; };
 		35266F342142C4AD0032AF71 /* UIViewController+UDNavActivityItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+UDNavActivityItem.m"; sourceTree = "<group>"; };
-		35266F382142D1160032AF71 /* UDKeyboardInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputView.h; sourceTree = "<group>"; };
-		35266F392142D1160032AF71 /* UDKeyboardInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputView.m; sourceTree = "<group>"; };
+		35266F382142D1160032AF71 /* UDKeyboardInputAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputAccessoryView.h; sourceTree = "<group>"; };
+		35266F392142D1160032AF71 /* UDKeyboardInputAccessoryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDKeyboardInputAccessoryView.m; sourceTree = "<group>"; };
 		35266F3B2142D7200032AF71 /* UIView+UDExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+UDExtension.h"; sourceTree = "<group>"; };
 		35266F3C2142D7200032AF71 /* UIView+UDExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+UDExtension.m"; sourceTree = "<group>"; };
 		352A58CA2142E5E9009B7E26 /* UDKeyboardInputViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UDKeyboardInputViewItem.h; sourceTree = "<group>"; };
@@ -1189,8 +1189,8 @@
 		35266F372142CFE60032AF71 /* keyboardInputView */ = {
 			isa = PBXGroup;
 			children = (
-				35266F382142D1160032AF71 /* UDKeyboardInputView.h */,
-				35266F392142D1160032AF71 /* UDKeyboardInputView.m */,
+				35266F382142D1160032AF71 /* UDKeyboardInputAccessoryView.h */,
+				35266F392142D1160032AF71 /* UDKeyboardInputAccessoryView.m */,
 				352A58CA2142E5E9009B7E26 /* UDKeyboardInputViewItem.h */,
 				352A58CB2142E5E9009B7E26 /* UDKeyboardInputViewItem.m */,
 			);
@@ -1502,7 +1502,7 @@
 				22572F61212BEC81009DD627 /* UIView+Layout.m in Sources */,
 				225730ED212E6A3A009DD627 /* QNResponseInfo.m in Sources */,
 				22572F5E212BEC81009DD627 /* TZLocationManager.m in Sources */,
-				35266F3A2142D1160032AF71 /* UDKeyboardInputView.m in Sources */,
+				35266F3A2142D1160032AF71 /* UDKeyboardInputAccessoryView.m in Sources */,
 				225730AB212BF14B009DD627 /* HRColorUtil.m in Sources */,
 				225730AA212BF14B009DD627 /* WPLegacyEditorFormatToolbar.m in Sources */,
 				22573098212BF14B009DD627 /* HRColorPickerView.m in Sources */,
@@ -1653,6 +1653,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1705,6 +1706,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1720,6 +1722,11 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UDWebViewEditor/config/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/view/**",
+					"$(SRCROOT)/**",
+					"$(SRCROOT)/view/keyboardInputView",
+				);
 				INFOPLIST_FILE = "./UDWebViewEditor//config/UDWebViewEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1732,6 +1739,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
@@ -1746,6 +1754,11 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/UDWebViewEditor/config/PrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/view/**",
+					"$(SRCROOT)/**",
+					"$(SRCROOT)/view/keyboardInputView",
+				);
 				INFOPLIST_FILE = "./UDWebViewEditor//config/UDWebViewEditor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1757,6 +1770,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "UDWebViewEditor/plugins/CocoaLumberjack/classes/UDWebViewEditor-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};
@@ -1844,7 +1858,7 @@
 				22572F09212BE9B5009DD627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		22572F0A212BE9B5009DD627 /* Build configuration list for PBXNativeTarget "UDWebViewEditor" */ = {
 			isa = XCConfigurationList;
@@ -1853,7 +1867,7 @@
 				22572F0C212BE9B5009DD627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		22572F0D212BE9B5009DD627 /* Build configuration list for PBXNativeTarget "UDWebViewEditorTests" */ = {
 			isa = XCConfigurationList;
@@ -1862,7 +1876,7 @@
 				22572F0F212BE9B5009DD627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		22572F10212BE9B5009DD627 /* Build configuration list for PBXNativeTarget "UDWebViewEditorUITests" */ = {
 			isa = XCConfigurationList;
@@ -1871,7 +1885,7 @@
 				22572F12212BE9B5009DD627 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

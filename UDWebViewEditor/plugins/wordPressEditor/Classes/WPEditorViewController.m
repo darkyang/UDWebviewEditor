@@ -10,12 +10,12 @@
 #import "ZSSBarButtonItem.h"
 
 @interface WrapperViewForInputView: UIView
-    @property (nonatomic, strong) UDKeyboardInputView *toolbar;
+    @property (nonatomic, strong) UDKeyboardInputAccessoryView *toolbar;
 @end
 
 @implementation WrapperViewForInputView
 
-- (instancetype)initWithToolbar:(UDKeyboardInputView *)toolbar {
+- (instancetype)initWithToolbar:(UDKeyboardInputAccessoryView *)toolbar {
     self = [super initWithFrame:CGRectMake(0, 0, self.frame.size.width, WPEditorFormatbarViewToolbarHeight)];
     if (self) {
         _toolbar = toolbar;
@@ -69,7 +69,7 @@
 
 #pragma mark - Properties: Toolbar
 
-@property (nonatomic, strong, readwrite) UDKeyboardInputView* toolbarView;
+@property (nonatomic, strong, readwrite) UDKeyboardInputAccessoryView* toolbarView;
 
 @property (nonatomic, strong, readwrite) WrapperViewForInputView* wrapperViewForInputView;
 
@@ -136,40 +136,40 @@
 //    NSBundle *editorBundle = [NSBundle bundleForClass:[WPEditorFormatbarView class]];
 //    _toolbarView = (WPEditorFormatbarView *)[[editorBundle loadNibNamed:NSStringFromClass([WPEditorFormatbarView class]) owner:nil options:nil] firstObject];
     
-    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
-    
-    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
-    
-    _toolbarView = [[UDKeyboardInputView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)
-                                                    itemWidth:50.f
-                                                        style:UDKeyboardInputViewStyleDoneButton
-                                                        icons:icons
-                                               indicatorTitle:nil
-                                                     Handlers:handlers];
+//    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
+//
+//    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
+//
+//    };
+//
+//    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
+//
+//    _toolbarView = [[UDKeyboardInputView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 88)
+//                                                    itemWidth:50.f
+//                                                        style:UDKeyboardInputViewStyleDoneButton
+//                                                        icons:icons
+//                                               indicatorTitle:nil
+//                                                     Handlers:handlers];
 }
 
 #pragma mark - UIViewController
@@ -346,8 +346,8 @@
         self.editorView.autoresizesSubviews = YES;
         self.editorView.autoresizingMask = mask;
         self.editorView.backgroundColor = [UIColor whiteColor];
-        self.editorView.sourceView.inputAccessoryView = self.wrapperViewForInputView;
-        self.editorView.sourceViewTitleField.inputAccessoryView = self.wrapperViewForInputView;
+//        self.editorView.sourceView.inputAccessoryView = self.toolbarView;
+//        self.editorView.sourceViewTitleField.inputAccessoryView = self.toolbarView;
         
         // Default placeholder text
         self.titlePlaceholderText = NSLocalizedString(@"Post title",  @"Placeholder for the post title.");

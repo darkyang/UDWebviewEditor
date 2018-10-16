@@ -7,11 +7,15 @@
 //
 
 #import "UDEditorViewController.h"
+#import "UDKeyboardInputAccessoryView.h"
+
 #import "UDArticleModel.h"
 
 @interface UDEditorViewController ()
 
 @property (nonatomic, strong) UDArticleModel *articleModel;
+
+@property (nonatomic, strong) UDKeyboardInputAccessoryView *accessoryView;
 
 @end
 
@@ -44,6 +48,42 @@
     [self setTitleLabel:NSLocalizedString(@"UDEditor", nil) selector:@selector(tapTitle:)];
     [self setLeftNavItemWithTitle:NSLocalizedString(@"取消", nil) selector:@selector(cancelEdit:)];
     [self setRightNavItemWithTitle:NSLocalizedString(@"预览", nil) selector:@selector(nextStep:)];
+}
+
+- (void)initInputAccessoryView{
+    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
+    
+    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
+        
+    };
+    
+    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
+    self.accessoryView = [[UDKeyboardInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)
+                                                                   itemWidth:50.f
+                                                                       style:UDKeyboardInputAccessoryViewStyleDoneButton
+                                                                       icons:icons
+                                                              indicatorTitle:nil
+                                                                    Handlers:handlers];
 }
 
 #pragma mark -- event handler - navbar

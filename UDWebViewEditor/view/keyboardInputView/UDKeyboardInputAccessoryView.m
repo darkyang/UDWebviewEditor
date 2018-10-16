@@ -6,13 +6,13 @@
 //  Copyright © 2018年 UD. All rights reserved.
 //
 
-#import "UDKeyboardInputView.h"
+#import "UDKeyboardInputAccessoryView.h"
 
 #define leftMargin 6.f
 #define margin 10.f
 #define backgroundHeight 50.f
 
-@interface UDKeyboardInputView ()
+@interface UDKeyboardInputAccessoryView ()
 
 @property (nonatomic, strong) UIScrollView *containerView;
 @property (nonatomic, strong) UDKeyboardInputViewItem *doneItem;
@@ -20,8 +20,8 @@
 
 @end
 
-@implementation UDKeyboardInputView{
-    UDKeyboardInputViewStyle _style;
+@implementation UDKeyboardInputAccessoryView{
+    UDKeyboardInputAccessoryViewStyle _style;
     NSArray *_icons;
     NSArray *_handlerArray;
     CGFloat _itemWidth;
@@ -30,17 +30,20 @@
 #pragma mark -- init
 - (instancetype)initWithFrame:(CGRect)frame
                     itemWidth:(CGFloat)width
-                        style:(UDKeyboardInputViewStyle)style
+                        style:(UDKeyboardInputAccessoryViewStyle)style
                         icons:(NSArray<NSString*>*)icons
                indicatorTitle:(NSString*)title
                      Handlers:(NSArray<toolbarItemTapHandler>*)handlers{
     self = [super initWithFrame:frame];
     
+    self.backgroundColor = [UIColor blueColor];
     _itemWidth = width;
     _itemHeight = width;
     _style = style;
     _icons = icons;
     _handlerArray = handlers;
+    
+    [self setupUIWithFrame:frame title:nil];
     
     return self;
 }
@@ -49,10 +52,10 @@
     if (!_icons || [_icons count] == 0) {
         return;
     }
-    if (_style & UDKeyboardInputViewStyleDefault) {
+    if (_style & UDKeyboardInputAccessoryViewStyleDefault) {
 //        [self setupDefaultStyleWithFrame:frame];
     }
-    if (_style & UDKeyboardInputViewStyleEdit) {
+    if (_style & UDKeyboardInputAccessoryViewStyleEdit) {
         [self setupEditStyleWithFrame:frame title:title];
     }
 }

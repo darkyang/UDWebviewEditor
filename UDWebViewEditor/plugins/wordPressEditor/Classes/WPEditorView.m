@@ -9,7 +9,6 @@
 #import "WPEditorView.h"
 
 #import "UIWebView+GUIFixes.h"
-#import "UDKeyboardInputView.h"
 #import "HRColorUtil.h"
 #import "WPEditorField.h"
 #import "WPImageMeta.h"
@@ -63,7 +62,7 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
 #pragma mark - Fields
 @property (nonatomic, weak, readwrite) WPEditorField* focusedField;
 
-@property (nonatomic, strong) UDKeyboardInputView *customInputView;
+//@property (nonatomic, strong) UDKeyboardInputView *customInputView;
 
 @end
 
@@ -196,40 +195,7 @@ static NSString* const WPEditorViewWebViewContentSizeKey = @"contentSize";
 }
 
 - (void)createCustomInputView{
-    NSArray* icons = @[@"图片", @"@", @"标签", @"表情", @"排版", @"编辑/浏览"];
-    
-    toolbarItemTapHandler imageHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler atUserHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler tagHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler emojiHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler settingHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    toolbarItemTapHandler doneHandler = ^(UDKeyboardInputViewItem* item){
-        
-    };
-    
-    NSArray* handlers = @[imageHandler, atUserHandler, tagHandler, emojiHandler, settingHandler, doneHandler];
-    
-    _customInputView = [[UDKeyboardInputView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)
-                                                        itemWidth:50.f
-                                                            style:UDKeyboardInputViewStyleDoneButton
-                                                            icons:icons
-                                                   indicatorTitle:nil
-                                                         Handlers:handlers];
+ 
 }
 
 - (void)createWebViewWithFrame:(CGRect)frame
